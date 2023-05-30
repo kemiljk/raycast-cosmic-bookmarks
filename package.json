@@ -1,0 +1,66 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "cosmic-bookmarks",
+  "title": "Cosmic Bookmarks",
+  "description": "Read and visit saved Bookmarks",
+  "icon": "command-icon.png",
+  "author": "kemiljk",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "bookmarks",
+      "title": "Bookmarks",
+      "description": "",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@cosmicjs/sdk": "^1.0.6",
+    "@raycast/api": "^1.52.1",
+    "@raycast/utils": "^1.7.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "1.0.5",
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "preferences": [
+    {
+      "name": "bucketSlug",
+      "title": "Cosmic Bucket Slug",
+      "description": "Your Cosmic Bucket Slug",
+      "type": "textfield",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "readKey",
+      "title": "Cosmic Read Key",
+      "description": "Your Cosmic Read Key",
+      "type": "password",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "writeKey",
+      "title": "Cosmic Write Key",
+      "description": "Your Cosmic Write Key",
+      "type": "password",
+      "defaultValue": "",
+      "required": true
+    }
+  ],
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
