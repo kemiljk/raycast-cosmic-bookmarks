@@ -1,7 +1,5 @@
 import { MenuBarExtra, Icon, getPreferenceValues } from "@raycast/api";
 import { useFetch } from "@raycast/utils";
-import { load } from "cheerio";
-import fetch from "node-fetch";
 
 interface Preferences {
   bucketSlug: string;
