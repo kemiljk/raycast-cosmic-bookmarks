@@ -15,6 +15,11 @@ interface ObjectsList {
       type: string;
       title: string;
       slug: string;
+      metadata?: {
+        snippet: string;
+        url: string;
+        read: boolean;
+      };
     }
   ];
 }
@@ -41,16 +46,18 @@ export default function Command() {
   );
 
   return (
-    <List isLoading={isLoading} isShowingDetail>
-      {data?.objects.map((object) => (
-        <List.Item
-          key={object.id}
-          title={object.title}
-          detail={<ObjectDetail id={object.id ?? ""} />}
-          actions={<Actions id={object.id ?? ""} />}
-        />
-      ))}
-    </List>
+    <>
+      <List isLoading={isLoading} isShowingDetail>
+        {data?.objects.map((object) => (
+          <List.Item
+            key={object.id}
+            title={object.title}
+            detail={<ObjectDetail id={object.id ?? ""} />}
+            actions={<Actions id={object.id ?? ""} />}
+          />
+        ))}
+      </List>
+    </>
   );
 }
 

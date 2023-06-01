@@ -1,4 +1,4 @@
-import { getPreferenceValues, Clipboard } from "@raycast/api";
+import { getPreferenceValues, Clipboard, showToast, Toast } from "@raycast/api";
 import { createBucketClient } from "@cosmicjs/sdk";
 import { load } from "cheerio";
 import fetch from "node-fetch";
@@ -11,9 +11,9 @@ interface Preferences {
 
 export default async function Command() {
   const { bucketSlug, readKey, writeKey } = getPreferenceValues<Preferences>();
-
   try {
     const url = (await Clipboard.readText())?.trim();
+
     if (!url) {
       console.error("Clipboard does not contain a URL");
       return;
@@ -58,6 +58,9 @@ async function addBookmark(
     writeKey: writeKey,
   });
 
+  let isLoading = false;
+  const success = true;
+
   try {
     const create = await cosmic.objects.insertOne({
       type: "bookmarks",
@@ -68,8 +71,20 @@ async function addBookmark(
         read: false,
       },
     });
+    isLoading = true;
     const data = await create.object;
     console.log(data);
+    isLoading = false && success;
+
+    if (!isLoading && success) {
+      await showToast({ title: "Saved bookmark", message: `Added ${title}` });
+    } else {
+      await showToast({
+        style: Toast.Style.Failure,
+        title: "Couldn't save bookmark",
+        message: "Try again later",
+      });
+    }
     Clipboard.clear();
   } catch (err) {
     console.error("Error:", err);

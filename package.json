@@ -3,7 +3,7 @@
   "name": "cosmic-bookmarks",
   "title": "Cosmic Bookmarks",
   "description": "Read and visit saved Bookmarks",
-  "icon": "command-icon.png",
+  "icon": "bookmarks-icon.png",
   "author": "kemiljk",
   "categories": [
     "Productivity"
@@ -20,7 +20,17 @@
       "name": "save-bookmarks",
       "title": "Save a Bookmarks",
       "description": "Instantly save a Bookmark",
+      "icon": "add-Bookmark-icon.png",
       "mode": "no-view"
+    },
+    {
+      "name": "menubar",
+      "title": "View Bookmarks",
+      "description": "Bookmarks in your Menu Bar",
+      "mode": "menu-bar",
+      "icon": "menubar-icon.png",
+      "interval": "15m",
+      "refreshControl": true
     }
   ],
   "dependencies": {
