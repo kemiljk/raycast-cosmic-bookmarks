@@ -1,6 +1,6 @@
 import { Action, ActionPanel, List, getPreferenceValues, openExtensionPreferences } from "@raycast/api";
-import { useFetch } from "@raycast/utils";
 import { createBucketClient } from "@cosmicjs/sdk";
+import { useFetch } from "@raycast/utils";
 
 interface Preferences {
   bucketSlug: string;

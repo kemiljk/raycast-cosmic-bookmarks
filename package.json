@@ -13,14 +13,22 @@
     {
       "name": "bookmarks",
       "title": "Bookmarks",
-      "description": "",
+      "description": "Quickly view and visit your saved Bookmarks",
       "mode": "view"
+    },
+    {
+      "name": "save-bookmarks",
+      "title": "Save a Bookmarks",
+      "description": "Instantly save a Bookmark",
+      "mode": "no-view"
     }
   ],
   "dependencies": {
     "@cosmicjs/sdk": "^1.0.6",
     "@raycast/api": "^1.52.1",
-    "@raycast/utils": "^1.7.0"
+    "@raycast/utils": "^1.7.0",
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^3.3.1"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
