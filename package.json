@@ -12,13 +12,13 @@
   "commands": [
     {
       "name": "bookmarks",
-      "title": "Bookmarks",
+      "title": "Cosmic Bookmarks",
       "description": "Quickly view and visit your saved Bookmarks",
       "mode": "view"
     },
     {
       "name": "save-bookmarks",
-      "title": "Save a Bookmarks",
+      "title": "Save a Bookmark",
       "description": "Instantly save a Bookmark",
       "icon": "add-Bookmark-icon.png",
       "mode": "no-view"
