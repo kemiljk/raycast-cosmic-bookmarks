@@ -1,3 +1,3 @@
 # Cosmic Bookmarks
 
-Read and visit saved Bookmarks# raycast-cosmic-bookmarks
+Read, visit and save Bookmarks to and from Cosmic
